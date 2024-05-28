@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-container {
+    text-align: center;
+}
+
+.form-container h1 {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+}
+
+.input-container input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #FF9A8B, #FF6A88);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #FF6A88, #FF9A8B);
+}
+
+#error-msg {
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .input-container input,
+     button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container sign-in-container">
+            <form id="loginForm">
+                <h1>LOGIN</h1>
+                <div class="input-container">
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit">Sign In</button>
+                <span id="error-msg"></span>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get username and password values
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    // Define multiple username and password combinations
+    var credentials = [
+        { username: 'segni', password: 'segni1234' }
+    ];
+
+    // Check if the entered credentials match any of the predefined combinations
+    var validCredentials = credentials.some(function(credential) {
+        return username === credential.username && password === credential.password;
+    });
+
+    if (validCredentials) {
+        // Redirect to sso.html
+        window.location.href = 'dashboard.html';
+    } else {
+        // Display an error message
+        document.getElementById('error-msg').innerText = 'Incorrect username or password';
+    }
+});
+
+    </script>
+</body>
+</html>

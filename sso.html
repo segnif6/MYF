@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSO PLC</title>
+    <link rel="stylesheet" href="sso.css">
+    <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="dd">
+    <style>
+        .ses{
+            height: 30px;
+        }
+    </style>
+    </head>
+<body>
+   
+    <header>
+        <div class="logo">Segni Shopping</div>
+        <center><input type="text" id="searchInput" class="search-box" placeholder="Search products..." onkeyup="searchProducts()"></center>
+
+               <nav>
+            <ul>
+                <li><a href="E:/amazon/all.html">Home</a></li>
+                <li><a href="#" onclick="">Shop</a></li>
+                <li><a style="display: flex;" href="#" onclick="toggleCart()"><i class="fas fa-cart" style="font-size:24px; cursor:pointer;"></i>Cart</a></li>
+            </ul>
+        </nav>
+    </header><br><br><br><br><br>
+   
+    <main>
+        <section class="product-list">
+            <div class="product">
+                <img src="product1.jpg" alt="Product 1" id="p1">
+                <h3>Shoes <br>Id: T5r8ff52v</h3>
+                <p>$50.00</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Shoes', 50.00)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product" id="rr">
+                <img src="product2.jpg" alt="Product 2">
+                <h3>Jeans<br>Id: SEG34F5G4</h3>
+                <p>$75.00</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Jeance', 75.00 + 0.8)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product" id="rr">
+                <img src="Laptop.jpg" alt="Laptop">
+                <h3>HP Laptop 6GB RAM and 512GB Storage,<br>ID:A2D34F5G7</h3>
+                <p>$75.00</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Laptop', 75.00)">Add to Cart</button>
+                </div>
+            </div> 
+            <div class="product" id="rr">
+                <img src="Laptop.jpg" alt="Laptop">
+                <h3>HP Laptop 8GbRam and 1tr storage<br>ID:O3D42D42W</h3>
+                <p>99.99</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Product 2', 99.99)">Add to Cart</button>
+                </div>
+            </div> 
+            <div class="product" id="rr">
+                <img src="Iphone 11.jpg" alt="Laptop">
+                <h3>Apple Iphone 11 8GB RAM and 512GB Storage<br>ID:3G5F6D34R</h3>
+                <p> $450.00</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Iphone 11', 450.00)">Add to Cart</button>
+                </div>
+            </div>
+            </section><br>
+            <section id="ssse">
+            <div class="product">
+                <img src="Apple Laptop.jpg" alt="Laptop">
+                <h3>Apple Laptop<BR>id:D34FF55J7</h3>
+                <p>$750.00</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Apple Laptop', 750)">Add to Cart</button>
+                </div>
+            </div> 
+            <div class="product">
+                <img src="Ipjone 13.jpg" alt="Laptop">
+                <h3>Apple Iphone 13 1TR Storage and 12GB RAM<br>ID:FD334JF3E</h3>
+                <p>$750.00</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Iphone 11', 750.00)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="Iphone 12.jpg" alt="Laptop">
+                <h3>Apple  Iphone 12<br>ID:H7S4D43ET</h3>
+                <p>$670.00</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Iphone 11', 670.00)">Add to Cart</button>
+                </div>
+            </div> 
+            <div class="product">
+                <img src="Demon of unrest.jpg" alt="Laptop">
+                <h3>Demon of Unrest Book<br>ID: REDHEGH575</h3>
+                <p>$67.00</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Demon Of Unrest', 67.00)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="Imac1 1399.99.jpg" alt="Laptop">
+                <h3>Apple I mac<br>ID: FG454F3T5</h3>
+                </h3>
+                <p>$1399.99</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Imac1', 1399.99)">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+         <section style="display: flex;">
+            <div class="product">
+                <img src="s24.jpg" alt="Laptop">
+                <h3>Sumsung S24 ultra<br>ID: D34FGS453</h3>
+                <p>$1056.43</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Sumsung s24 ultra', 1056.43)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="s23.jpg" alt="Laptop">
+                <h3>Sumsung S23 ultra<br>ID: DF3344F</h3>
+                <p>$987.99</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Sumsung s23 ultra', 987.99)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="s22.jpg" alt="Laptop">
+                <h3>Sumsung S22 ultra<br>ID: GH34HG4</h3>
+                <p>$899.99</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Sumsung s22 ultra', 899.99)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="s21.jpg" alt="Laptop">
+                <h3>Sumsung s21 ultra<br>ID: DF3343DGD</h3>
+                <p>$775.99</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Sumsung s21 ultra', 775.99)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="s20.jpg" alt="Laptop">
+                <h3>Sumsung S20 ultra<br>ID: fh56juik</h3>
+                <p>$600.00</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Sumsung s20 ultra', 600.00)">Add to Cart</button>
+                </div>
+            </div>
+         </section>
+         <section style="display: flex;">
+            <div class="product">
+                <img src="3.jpg" alt="Laptop">
+                <h3>3 by 3 cube ,2 by 2 cube and pyramid cube </h3>
+                <p>$30.67</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('2x2 , 3x3 and pyramid', 600.00)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="4.jpg" alt="Laptop" id="hh">
+                <h3>4 by 4 speed cube<br>ID: GH4545HG</h3>
+                <p>$15.00</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('4by4 cube', 15.00)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="2.jpg" alt="Laptop" id="hh">
+                <h3>2 by 2 speed cube 2x2<br>ID: VG565GTK</h3>
+                <p>$11.45</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('2 by2 cube', 11.45)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="16.jpg" alt="Laptop" id="hh">
+                <h3>3 by 3<br>ID: FG45YHY7</h3>
+                <p>$23.78</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('3 by 3 segni', 23.78)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product" id="css">
+                <img src="4.99.jpg" alt="Laptop" id="hh">
+                <h3>3 by 3 rubik's cube<br>ID: FG56HJ7</h3>
+                <p>$4.99</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('3 by 3 segni', 4.99)">Add to Cart</button>
+                </div>
+            </div>
+            
+         </section><br>
+         <section style="display: flex;">
+            <div class="product">
+                <img src="One plus.jpg" alt="Laptop">
+                <h3>One plus Smart phone 8GB RAM and 256GB Storage<br>ID: FG456J</h3>
+                <p>$330.67</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('One plus', 33.67 )">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="knife book.jpg" alt="Laptop">
+                <h3>Knife Book<br>ID: GH56HGK6</h3>
+                <p>$27.65</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('Knife Book', 27.65 )">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="History for kids.jpg" alt="Laptop">
+                <h3>History Book History for kids<br>ID: RTU5766</h3>
+                <p>$33.67</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('One plus', 33.67 )">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="World history.jpg" alt="Laptop">
+                <h3>History Book World History<br>ID: RT56F68UT</h3>
+                <p>$56.67</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('One plus', 56.67 )">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="2345.jpg" alt="Laptop">
+                <h3>3 by 3 cube/ 3x3 cube<br>ID: RT56F68UT</h3>
+                <p>$56.67</p>
+                <div>
+                    <span class="item-quantity">Quantity: <input type="number" value="1" min="1" max="6"></span>
+                    <button class="update-quantity" onclick="updateQuantity(1)">Update Cart</button>
+                    <button onclick="addToCart('One plus', 56.67 )">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+        <h3><a href="new/new.html">More Product</a>
+        </h3>
+    <div class="cart-items" id="cartItems">
+        <h3 class="car">Cart Items<br></h3>
+        <div id="cartContent"></div>
+        <p id="sef">Total: $<span id="cartTotal">0.00</span><br><center><a href="delivery.html" id="sosos">Buy Now</a></p>  </center>
+    </div>
+   
+    <script src="sso.js">
+    </script>
+</body>
+</html>

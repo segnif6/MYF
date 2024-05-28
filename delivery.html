@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS Delivery Page</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #007bff;
+}
+.payment {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.form-container, .options-container, .confirmation-container {
+    display: none;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.delivery-options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.option {
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.option img {
+    width: 100%;
+    height: auto;
+}
+
+.option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .option {
+        width: 80px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .option {
+        width: 60px;
+        padding: 6px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Delivery Information</h2>
+        <div class="form-container" id="form-container">
+            <form id="delivery-form">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" required>
+                </div>
+                <div class="input-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" required>
+                </div>
+                <div class="input-group">
+                    <label for="zip">ZIP Code</label>
+                    <input type="text" id="zip" required>
+                </div>
+                <button type="submit">Continue</button>
+            </form>
+        </div>
+        <div class="options-container" id="options-container">
+            <h2>Select Delivery Option</h2>
+            <div class="delivery-options">
+                <div class="option" data-option="standard">
+                    <img src="https://via.placeholder.com/100" alt="Standard Delivery">
+                    <span>Standard Delivery</span>
+                </div>
+                <div class="option" data-option="express">
+                    <img src="https://via.placeholder.com/100" alt="Express Delivery">
+                    <span>Express Delivery</span>
+                </div>
+                <div class="option" data-option="overnight">
+                    <img src="https://via.placeholder.com/100" alt="Overnight Delivery">
+                    <span>Overnight Delivery</span>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="confirmation-container" id="confirmation-container">
+            <h3>Delivery Scheduled Successfully!</h3>
+            <a href="payment.html" class="payment">Payment</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const formContainer = document.getElementById('form-container');
+    const optionsContainer = document.getElementById('options-container');
+    const confirmationContainer = document.getElementById('confirmation-container');
+
+    formContainer.style.display = 'block';
+
+    document.getElementById('delivery-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        formContainer.style.display = 'none';
+        optionsContainer.style.display = 'block';
+    });
+
+    document.querySelectorAll('.option').forEach(option => {
+        option.addEventListener('click', function() {
+            optionsContainer.style.display = 'none';
+            confirmationContainer.style.display = 'block';
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

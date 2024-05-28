@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+input[type="email"],
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Hide OTP input initially */
+#otp {
+    display: none;
+}
+
+/* Display OTP input after clicking Send OTP button */
+#otp.displayed {
+    display: block;
+}
+
+/* Hide Submit OTP button initially */
+#submitBtn {
+    display: none;
+}
+
+/* Display Submit OTP button after clicking Send OTP button */
+#submitBtn.displayed {
+    display: block;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Forgot Password</h1>
+        <form id="forgotPasswordForm">
+            <p>Please enter your email address. We will send you a One-Time Password (OTP) to reset your password.</p>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="button" onclick="sendOTP()">Send OTP</button>
+            <input type="text" id="otp" placeholder="Enter OTP" style="display: none;" required>
+            <button type="submit" id="submitBtn" style="display: none;">Submit OTP</button>
+        </form>
+    </div>
+
+    <script>
+        function sendOTP() {
+            const email = document.getElementById('email').value;
+            const otp = Math.floor(100000 + Math.random() * 900000); // Generate a random 6-digit OTP
+
+            // Normally, you would send this OTP to the server, which would handle sending it via email to the user
+
+            console.log(`Sending OTP ${otp} to ${email}`);
+
+            // For demonstration, we'll just display the OTP input field and submit button
+            document.getElementById('otp').style.display = 'block';
+            document.getElementById('submitBtn').style.display = 'block';
+
+            // You might want to store the OTP and associated email in a database for verification later
+            // In a real application, you would also handle sending the OTP via email using a server-side component
+        }
+    </script>
+</body>
+</html>
